@@ -5,7 +5,7 @@ purpose is to give interesting context to learn and apply Rust techniques.
 ## Modules
 ### main:
   #### Build a circuit
-  1. Compute equivalent resistance of two parallel resistors\
+  1. Compute equivalent resistance of two parallel resistors
   2. Calculate the resulting current
   #### Generates a signal
   1. Define a `square` waveform
@@ -23,19 +23,23 @@ purpose is to give interesting context to learn and apply Rust techniques.
 ### circuits
 Contains circuit elements and related functions
 
-#### `enum` Component for resistors, capacitors and inductors
-* `method` **reactance**: Returns the reactance for resistor, capacitor
+1. `enum` **Component**: For circuit elements
+    - resistors
+    - capacitors
+    - inductors
+
+    `method` **reactance**: Returns the reactance for resistor, capacitor
       and inductors respectively
 
-`function` **parallel_resistance**: Returns the equivalent parallel resistance
-  of two resistors\
-`function` **calculate_wavelength**: Returns the wavelength of a signal in
-  a vacuum for a given frequency \
-`function` **get_max_value**:  Returns the maximum value of an input array\
-`function` **get_min_value**:  Returns the minimum value of an input array\
-`function` **get_minmax**:  Returns the minimum and maximum values of an input array
-  as a tuple\
-`function` **normalize_signal**: Returns a new array from an input array with values
+2. `function` **parallel_resistance**: Returns the equivalent parallel resistance
+  of two resistors
+3. `function` **calculate_wavelength**: Returns the wavelength of a signal in
+  a vacuum for a given frequency
+4. `function` **get_max_value**:  Returns the maximum value of an input array
+5. `function` **get_min_value**:  Returns the minimum value of an input array
+6. `function` **get_minmax**:  Returns the minimum and maximum values of an input array
+  as a tuple
+7. `function` **normalize_signal**: Returns a new array from an input array with values
     mapped between 0 and 1.
 
 ### signals
@@ -58,23 +62,23 @@ Contains signals and related models.
 3. `struct` **DataSignal**\
     A signal whose values are set from an arbitrary input array
 
-    * `method` **new**: Creates a new DataSignal\
-    * `method` **samples**: Returns the values of the signal as an array\
-    * `method` **len**: Number of samples in the signal\
-    * `method` **rms**: Calculates the root-mean-square value of the signal\
+    * `method` **new**: Creates a new DataSignal
+    * `method` **samples**: Returns the values of the signal as an array
+    * `method` **len**: Number of samples in the signal
+    * `method` **rms**: Calculates the root-mean-square value of the signal
     * `method` **normalize**: Returns the samples mapped between 0 and 1
 
 4. `struct` **PeriodicSignal**\
     A signal whose values repeats periodically. The pattern is defined by its `waveform`.
 
-    * `method` **new**: Creates a new PeriodicSignal\
-    * `method` **sample**: Returns the value of the signal at time `t`\
+    * `method` **new**: Creates a new PeriodicSignal
+    * `method` **sample**: Returns the value of the signal at time `t`
     * `method` **interval**: Returns multiple values of the signal at time between
-      start and end with a given step size.\
+      start and end with a given step size.
     * `method` **add_filter**: Adds a filter to the signal. When the signal contains
-      a filter, `sample` and `interval` will return filtered values.\
-    * `method` **frequency**: Returns the frequency of the waveform.\
-    * `method` **amplitude**: Returns the amplitude of the waveform.\
+      a filter, `sample` and `interval` will return filtered values.
+    * `method` **frequency**: Returns the frequency of the waveform.
+    * `method` **amplitude**: Returns the amplitude of the waveform.
 5. `struct` **ContinuousSignal**\
     A continuous signal whose shape is defined by its `response`.
 
@@ -84,10 +88,10 @@ Contains signals and related models.
 Contains Digital Signal Processing elements.
 
 1. `enum` **Filter**: For different types of filter
-    - Differentiator { tau }
-    - HighPassFilter { alpha: f64 }
-    - Integrator { tau: f64 }
-    - LowPassFilter { alpha: f64 }
+    - Differentiator { `tau:` `f64` }
+    - HighPassFilter { `alpha:` `f64` }
+    - Integrator { `tau:` `f64` }
+    - LowPassFilter { `alpha:` `f64` }
     - Rectifier
 
     `method` **apply**: Applies the filter function to the sample of a signal
