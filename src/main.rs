@@ -28,7 +28,7 @@ pub fn main() {
     let pure_signal = signal.interval(0.0, 1.0, 1.0 / 360.0);
     println!("Display pure values: {:?}", &pure_signal);
 
-    // Apply DSP: low-pass filter
+    // Apply DSP: integrator
     let integrator = dsp::Filter::Integrator {
         tau: 2.0 * frequency / pure_signal.len() as f64,
     };
