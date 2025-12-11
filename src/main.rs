@@ -1,7 +1,6 @@
 //! The main purpose of this package is to serve as a learning playground for Rust programming.
-//! As such it contains basically a module for each chapter of the Rust book.
-//! The functions and structs demonstrate various Rust programming concepts while still being
-//! real and useful. This program aims to touch each of those modules.
+//! The functions and structs practices and explores various Rust programming concepts while still being
+//! real and interesting. This program aims to touch each of those modules.
 
 mod circuits;
 mod dsp;
